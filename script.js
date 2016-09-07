@@ -1,13 +1,17 @@
-// $(document).ready(function () {
-  console.log('page loaded')
+var Httpreq = new XMLHttpRequest();
 
-
-
-var Httpreq = new XMLHttpRequest(); // a new request
-Httpreq.open("GET",'https://api.github.com/users/technoweenie',false);
+Httpreq.open("GET","https://api.github.com/repos/facebook/react",false);
 Httpreq.send(null);
-console.log(Httpreq.responseText);
+var reactJSON = JSON.parse(Httpreq.response);
 
+Httpreq.open("GET","https://api.github.com/repos/angular/angular.js",false);
+Httpreq.send(null);
+var angularJSON = JSON.parse(Httpreq.response);
 
+Httpreq.open("GET","https://api.github.com/repos/emberjs/ember.js",false);
+Httpreq.send(null);
+var emberJSON = JSON.parse(Httpreq.response);
 
-// });
+Httpreq.open("GET","https://api.github.com/repos/vuejs/vue",false);
+Httpreq.send(null);
+var vueJSON = JSON.parse(Httpreq.response);
