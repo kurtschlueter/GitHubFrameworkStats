@@ -23,4 +23,11 @@ So I ran into a fork in the road here. GitHub (at least from my research) has no
 
 5. Organizing my Code Before Moving Forward
 
-So what I decided to do was to create a Framework class and instantiate it 4 times for the 4 different frameworks.
+So what I decided to do was to create a Framework class and instantiate it 4 times for the 4 different frameworks. I created a table class to be able to display the frameworks in whatever order desired. It sort of began taking the form of MVC with a runner file acting as the controller, a framework file acting as the model, and a view file acting as the view. At this stage I was content enough with the organization to move forward.
+
+Side note. I was having trouble accessing DOM elements in my js code. Initially I used the window.onload function but was annoyed with having to do so. I figured out that I mistakenly put the script tags in the head of the DOM so the scripts had already run before the DOM was even created. THis has happened to me before so I should have known better. It was a simple fix. I moved the script to the bottom on the body.
+
+6. The View
+
+Displaying and being able to order the data was the next step. This was pretty simple since everything was already set up. I created three prototype functions for the table class (orderTable, createTable, clearTable). The orderTable function was a bit tricky using vanilla JS but not terrible. Now the table header could be clicked to order the data in desc order for that particular property. If clicked again, the order would go asc, and so on.
+

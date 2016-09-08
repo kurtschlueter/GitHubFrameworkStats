@@ -24,8 +24,45 @@ vue.desiredDataExtraction();
 
 var tableDOM = document.getElementById("myTable");
 
-tableInstance = new Table(tableDOM, [angular, ember, react, vue]);
+var tableInstance = new Table(tableDOM, [angular, ember, react, vue]);
 tableInstance.fillTable();
+
+function orderFrameworks() {
+  tableInstance.clearTable();
+  tableInstance.orderTable('framework');
+  tableInstance.fillTable();
+}
+
+function orderWatchers() {
+  tableInstance.clearTable();
+  tableInstance.orderTable('watchers');
+  tableInstance.fillTable();
+}
+
+function orderStars() {
+  tableInstance.clearTable();
+  tableInstance.orderTable('stars');
+  tableInstance.fillTable();
+}
+
+function orderForks() {
+  tableInstance.clearTable();
+  tableInstance.orderTable('forks');
+  tableInstance.fillTable();
+}
+
+function orderContributors() {
+  tableInstance.clearTable();
+  tableInstance.orderTable('contributors');
+  tableInstance.fillTable();
+}
+
+function orderContributions() {
+  tableInstance.clearTable();
+  tableInstance.orderTable('contributions');
+  tableInstance.fillTable();
+}
+
 
 // window.setInterval(function(){
 //   console.log('s')
