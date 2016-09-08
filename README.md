@@ -23,3 +23,4 @@ So I ran into a fork in the road here. GitHub (at least from my research) has no
 
 5. Organizing my Code Before Moving Forward
 
+So what I decided to do was to create a Framework class and instantiate it 4 times for the 4 different frameworks.

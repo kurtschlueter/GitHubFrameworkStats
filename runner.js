@@ -22,26 +22,10 @@ vue.mainAPIcall();
 vue.contributorsAPIcall();
 vue.desiredDataExtraction();
 
-window.onload = function() {
+var tableDOM = document.getElementById("myTable");
 
-  var table = document.getElementById("myTable");
-
-  for (i = 0; i < 4; i++) {
-    var row = table.insertRow(i+1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    var cell5 = row.insertCell(4);
-    var cell6 = row.insertCell(5);
-    var cell7 = row.insertCell(6);
-    cell1.innerHTML = "<img src=" + frameworks[i].owner.avatar_url + "width='42' height='42'>"
-    cell2.innerHTML = frameworks[i].name;
-    cell3.innerHTML = frameworks[i].subscribers_count.toString();
-    cell4.innerHTML = frameworks[i].stargazers_count.toString();
-    cell5.innerHTML = frameworks[i].forks.toString();
-  }
-}
+tableInstance = new Table(tableDOM, [angular, ember, react, vue]);
+tableInstance.fillTable();
 
 // window.setInterval(function(){
 //   console.log('s')
