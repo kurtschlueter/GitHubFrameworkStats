@@ -1,13 +1,15 @@
 var Httpreq = new XMLHttpRequest();
 
 // Framework class
-var Framework = function (mainURL, contributorsURL) {
+var Framework = function (mainURL, contributorsURL, commitsURL) {
   // These properties arrive upon instantiation
   this.mainURL = mainURL;
   this.contributorsURL = contributorsURL;
+  this.commitsURL = commitsURL;
   // These properties are set after the api-call prototypes are executed
   this.mainJSONboject;
   this.contributorsJSONarray;
+  this.weeklyCommitsArray;
   // These properties are set after the api-call prototypes are executed and the desired data extraction prototype is executed (in that order)
   this.nombre;
   this.avatarURL;
@@ -24,6 +26,18 @@ Framework.prototype.mainAPIcall = function() {
   Httpreq.send(null);
   this.mainJSONboject = JSON.parse(Httpreq.response)
   return this.mainJSONboject;
+};
+
+// This function returns a JSON object of data from a repo's main api.
+Framework.prototype.commitsAPIcall = function() {
+  Httpreq.open("GET", this.commitsURL, false);
+  Httpreq.send(null);
+  var tempArray = JSON.parse(Httpreq.response).all
+  this.weeklyCommitsArray = [];
+  for (var i = 0; i < tempArray.length; ++i) {
+    this.weeklyCommitsArray[i] = {x: i+1, y: tempArray[i]};
+  }
+  return this.weeklyCommitsArray;
 };
 
 // This function returns an array of JSON objects of data from a repo's contributors api.

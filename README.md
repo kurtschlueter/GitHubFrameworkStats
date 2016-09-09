@@ -31,3 +31,11 @@ Side note. I was having trouble accessing DOM elements in my js code. Initially 
 
 Displaying and being able to order the data was the next step. This was pretty simple since everything was already set up. I created three prototype functions for the table class (orderTable, createTable, clearTable). The orderTable function was a bit tricky using vanilla JS but not terrible. Now the table header could be clicked to order the data in desc order for that particular property. If clicked again, the order would go asc, and so on.
 
+7. What is Next?
+
+The dashboard consisted of a sortable table with several GitHub statistics for four frameworks. I asked myself, what is this dashborad supposed to deliver? "To choose the winning technology, we need to compare development activity, community support, stability, and any other relevant information." And this is to be achieved by "creating a dashboard that helps us make the right choice based on GitHub activity." To be honest, the sortable table alone did not accomplish this. I needed something else... but what? The true answer is that I would never pick a framework based on GitHub statistics. All of these frameworks have fundamental differences that are beneficial in different ways. It would really depend on the application. That, however, is no excuse. If it did come down to GitHub stats, my dashboard would not cut the cake as is. Time to brainstorm.
+
+This was hard. None of the data from the GitHub api seemed like it would swing me one way or another in choosing a framework. I decided to get the weekly commit count for each framework for the past year. I figured this would at least show work activity trends. The more popular the framework, the more people working on it to make updates. I also though it would be cool to graph something.
+
+
+

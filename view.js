@@ -154,5 +154,3 @@ Table.prototype.orderTable = function(property) {
     this.contributorsOrder = 'none';
   }
 };
-
-
