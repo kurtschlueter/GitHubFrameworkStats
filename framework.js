@@ -24,11 +24,11 @@ var Framework = function (mainURL, contributorsURL, commitsURL) {
 Framework.prototype.mainAPIcall = function() {
   Httpreq.open("GET", this.mainURL, false);
   Httpreq.send(null);
-  this.mainJSONboject = JSON.parse(Httpreq.response)
+  this.mainJSONboject = JSON.parse(Httpreq.response);
   return this.mainJSONboject;
 };
 
-// This function returns a JSON object of data from a repo's main api.
+// This function returns an array of weekly commits as x and y coordinates
 Framework.prototype.commitsAPIcall = function() {
   Httpreq.open("GET", this.commitsURL, false);
   Httpreq.send(null);

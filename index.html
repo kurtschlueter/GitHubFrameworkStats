@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-table, td {
-    border: 1px solid black;
-}
-</style>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title></title>
   </head>
   <body>
     <h1>Front-End Frameworks GitHub Statistics</h1>
-    <table id="myTable">
-      <tr>
-        <td colspan="2"><button id="fw_b" onclick="orderFrameworks()">Framework</button></td>
-        <td><button onclick="orderWatchers()">Watchers</button></td>
-        <td><button onclick="orderStars()">Stars</button></td>
-        <td><button onclick="orderForks()">Forks</button></td>
-        <td><button onclick="orderContributors()">Contributors</button></td>
-        <td><button onclick="orderContributions()">Contributions</button></td>
-      </tr>
-    </table>
+    <button onclick="launchStats()">Refresh Statistics</button>
+    <!-- <div id="r1"> -->
+      <table id="myTable">
+        <tr>
+          <td colspan="2"><button id="fw_b" onclick="orderFrameworks()">Framework</button></td>
+          <td><button onclick="orderWatchers()">Watchers</button></td>
+          <td><button onclick="orderStars()">Stars</button></td>
+          <td><button onclick="orderForks()">Forks</button></td>
+          <td><button onclick="orderContributors()">Contributors</button></td>
+          <td><button onclick="orderContributions()">Contributions</button></td>
+        </tr>
+      </table>
 
-    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-
+      <div id="chartContainer"></div>
+    <!-- </div> -->
     <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="framework.js"></script>
-    <script src="view.js"></script>
-    <script src="commitChart.js"></script>
+    <script src="viewTable.js"></script>
+    <script src="viewChart.js"></script>
     <script src="runner.js"></script>
   </body>
 </html>

@@ -1,0 +1,21 @@
+table, td {
+    border: 1px solid black;
+}
+
+h1 {
+  text-align: center;
+}
+
+#r1 {
+  display: flex;
+}
+/*#myTable {
+  width: 500px;
+  background: lightblue;
+}
+#chartContainer {
+  flex: 1;
+  height: 300px;
+  min-width: 500px;
+}
+*/

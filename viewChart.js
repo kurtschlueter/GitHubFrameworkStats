@@ -64,6 +64,8 @@ var chart = new CanvasJS.Chart("chartContainer",
     ],
     legend: {
       cursor:"pointer",
+      verticalAlign: "top",
+      horizontalAlign: "center",
       itemclick : function(e) {
         if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
         e.dataSeries.visible = false;
