@@ -1,21 +1,43 @@
 table, td {
     border: 1px solid black;
+    border-radius: 5px;
 }
+
+table {text-align: center;}
 
 h1 {
   text-align: center;
 }
 
-#r1 {
-  display: flex;
-}
-/*#myTable {
-  width: 500px;
-  background: lightblue;
-}
 #chartContainer {
   flex: 1;
   height: 300px;
   min-width: 500px;
 }
-*/
+
+#tables-container {
+  display: flex;
+  width: 100%;
+}
+
+#summariesTable {
+  width:49%;
+  min-width: 610px;
+  margin: .5%;
+  background: lightblue;
+}
+
+#summariesTable button {
+  border: none;
+  background: lightblue;
+}
+
+#fw-content {
+  padding: 10px;
+}
+
+#statsTable {
+  width: 49%;
+  margin: .5%;
+  background: lightblue;
+}
