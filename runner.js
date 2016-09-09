@@ -1,4 +1,5 @@
-var tableInstance;
+var statsTableInstance;
+var summariesTableInstance;
 
 function launchStats() {
   var angular = new Framework("https://api.github.com/repos/angular/angular.js", "https://api.github.com/repos/angular/angular.js/contributors", "https://api.github.com/repos/angular/angular.js/stats/participation");
@@ -29,11 +30,16 @@ function launchStats() {
   vue.commitsAPIcall();
   vue.desiredDataExtraction();
 
-  var tableDOM = document.getElementById("myTable");
-  tableInstance = new Table(tableDOM, [angular, ember, react, vue]);
+  var statsTableDOM = document.getElementById("statsTable");
+  statsTableInstance = new StatsTable(statsTableDOM, [angular, ember, react, vue]);
 
-  tableInstance.clearTable();
-  tableInstance.fillTable();
+  statsTableInstance.clearTable();
+  statsTableInstance.fillTable();
+
+  var summariesTableDOM = document.getElementById("summariesTable");
+  summariesTableInstance = new SummariesTable(summariesTableDOM);
+
+  summariesTableInstance.fillContent('angular');
 
   angularData.length = 0;
   emberData.length = 0;
@@ -50,39 +56,55 @@ function launchStats() {
 
 
 function orderFrameworks() {
-  tableInstance.clearTable();
-  tableInstance.orderTable('framework');
-  tableInstance.fillTable();
+  statsTableInstance.clearTable();
+  statsTableInstance.orderTable('framework');
+  statsTableInstance.fillTable();
 }
 
 function orderWatchers() {
-  tableInstance.clearTable();
-  tableInstance.orderTable('watchers');
-  tableInstance.fillTable();
+  statsTableInstance.clearTable();
+  statsTableInstance.orderTable('watchers');
+  statsTableInstance.fillTable();
 }
 
 function orderStars() {
-  tableInstance.clearTable();
-  tableInstance.orderTable('stars');
-  tableInstance.fillTable();
+  statsTableInstance.clearTable();
+  statsTableInstance.orderTable('stars');
+  statsTableInstance.fillTable();
 }
 
 function orderForks() {
-  tableInstance.clearTable();
-  tableInstance.orderTable('forks');
-  tableInstance.fillTable();
+  statsTableInstance.clearTable();
+  statsTableInstance.orderTable('forks');
+  statsTableInstance.fillTable();
 }
 
 function orderContributors() {
-  tableInstance.clearTable();
-  tableInstance.orderTable('contributors');
-  tableInstance.fillTable();
+  statsTableInstance.clearTable();
+  statsTableInstance.orderTable('contributors');
+  statsTableInstance.fillTable();
 }
 
 function orderContributions() {
-  tableInstance.clearTable();
-  tableInstance.orderTable('contributions');
-  tableInstance.fillTable();
+  statsTableInstance.clearTable();
+  statsTableInstance.orderTable('contributions');
+  statsTableInstance.fillTable();
+}
+
+function selectAngular() {
+  summariesTableInstance.fillContent('angular');
+}
+
+function selectEmber() {
+  summariesTableInstance.fillContent('ember');
+}
+
+function selectReact() {
+  summariesTableInstance.fillContent('react');
+}
+
+function selectVue() {
+  summariesTableInstance.fillContent('vue');
 }
 
 launchStats();

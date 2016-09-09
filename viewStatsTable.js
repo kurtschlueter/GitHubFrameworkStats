@@ -1,5 +1,5 @@
 // Table class
-var Table = function (table, frameworks_array) {
+var StatsTable = function (table, frameworks_array) {
   this.table = table;
   this.frameworks_array = frameworks_array;
   this.nameOrder = 'desc';
@@ -10,14 +10,14 @@ var Table = function (table, frameworks_array) {
   this.contributionsOrder = 'none';
 };
 
-Table.prototype.clearTable = function() {
+StatsTable.prototype.clearTable = function() {
 
-    for (var i = this.table.rows.length - 1; i > 0; i--) {
+    for (var i = this.table.rows.length - 1; i > 1; i--) {
       this.table.deleteRow(i);
     }
 };
 
-Table.prototype.fillTable = function() {
+StatsTable.prototype.fillTable = function() {
   for(i = 0 ; i < this.frameworks_array.length ; i++) {
     var row = this.table.insertRow(-1);
     var avatarCell = row.insertCell(0);
@@ -27,7 +27,7 @@ Table.prototype.fillTable = function() {
     var forksCell = row.insertCell(4);
     var contributorsCell = row.insertCell(5);
     var contributionsCell = row.insertCell(6);
-    avatarCell.innerHTML = "<img src=" + this.frameworks_array[i].avatarURL + "width='42' height='42'>"
+    avatarCell.innerHTML = "<img src=" + this.frameworks_array[i].avatarURL + "width='44' height='44'>"
     nameCell.innerHTML = this.frameworks_array[i].nombre;
     watchersCell.innerHTML = this.frameworks_array[i].watchers.toString();
     starsCell.innerHTML = this.frameworks_array[i].stars.toString();
@@ -38,7 +38,7 @@ Table.prototype.fillTable = function() {
 };
 
 // Ok I know this is ridiculous. I should refactor later.
-Table.prototype.orderTable = function(property) {
+StatsTable.prototype.orderTable = function(property) {
 
   if (property == 'framework') {
     if (this.nameOrder != 'desc') {

@@ -51,4 +51,10 @@ The goal of this dashboard is to be able to compare certain GitHub statistics (l
 
     - Side note. This has been a good experience using vanilla Javascript. It makes me really appreciate the value of using a front-end framework. There were so many instances where I would think to myself, “wow, this would be so much easier with Angular or React”. That being said, it is refreshing to know that I do not have to be dependent on them.
 
+9. Framework Bios from the Readme
 
+    - The refresh button is complete. Before I move on to styling or instructions, I want to see if I can add another tool to the dashboard. I found something that would have been really useful... Traffic stats for each framework. The problem is that authorization is needed for this data. That is so unfortunate because I think that "pageviews" would really help gauge popularity through time. I also found a website that shows how many websites use each framework along with many more detailed splits. Those stats are not GitHub related so I cannot use them for this dashboard. The rest of what the GitHub api has to offer isn't worth it so I decided to add summaries from each framework's readme.
+
+    - A tool for ReadMe bio's is what I'll create instead. I feel it's usefull to have each framework's introduction easily accessible just to give some flavor and to allow them to pitch themselves. It will also be fun to create a a tabbed interface from scratch. I cannot promise it'll look pretty.
+
+    - I will also have to restructure everything involved with the statistic table because I will have two tables. I was not descript enough from the start
