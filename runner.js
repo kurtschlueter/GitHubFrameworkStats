@@ -1,3 +1,5 @@
+var tableInstance;
+
 function launchStats() {
   var angular = new Framework("https://api.github.com/repos/angular/angular.js", "https://api.github.com/repos/angular/angular.js/contributors", "https://api.github.com/repos/angular/angular.js/stats/participation");
 
@@ -28,8 +30,8 @@ function launchStats() {
   vue.desiredDataExtraction();
 
   var tableDOM = document.getElementById("myTable");
+  tableInstance = new Table(tableDOM, [angular, ember, react, vue]);
 
-  var tableInstance = new Table(tableDOM, [angular, ember, react, vue]);
   tableInstance.clearTable();
   tableInstance.fillTable();
 
